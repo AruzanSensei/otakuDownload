@@ -7,7 +7,7 @@ import json
 from datetime import datetime
 
 app = Flask(__name__)
-
+port = int(os.environ.get("PORT", 5000))
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     'Referer': 'https://otakudesu.cloud/'
@@ -238,4 +238,4 @@ def download_episode():
 #     app.run(debug=True) 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=port)
